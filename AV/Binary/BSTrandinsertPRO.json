@@ -1,0 +1,66 @@
+{
+  "translations": {
+    "en": {
+      ".avTitle": "BST Random Insertion",
+      "av_Authors": "Matthew McQuaigue",
+      ".instructLabel": "Instructions:",
+      ".instructions": "Based on the algorithm shown above, Click and highlight the path of insertion for the given value at the front of the stack.",
+      "av_postorder": "Postorder traversal begins.",
+      "av_nullcheck": "Check to see if node is null.",
+      "av_isnotnull": "Not null.",
+      "av_leftchild": "Make recursive call on left child.",
+      "av_rightchild": "Make recursive call on right child.",
+      "av_isnull": "Null.",
+      "av_visit": "Visit ",
+      "av_done": "Finished the postorder traversal on ",
+      "#about": "About"
+    }
+  },
+  "params": {
+    "JXOP-feedback": "atend"
+  },
+  "code": {
+    "processing": [{
+      "url": "../../../SourceCode/Pseudo/Binary/BSTrandinsertPRO.txt",
+      "lineNumbers": false,
+      "startAfter": "/* *** ODSATag: randinsertGood *** */",
+      "endBefore": "/* *** ODSAendTag: randinsertGood *** */",
+      "tags": {
+        "sig": 1,
+        "checknull": 2,
+        "visitleft": 3,
+        "visitright": 4,
+        "visit": 5,
+        "end": 6
+      }
+    }],
+    "java": [{
+      "url": "../../../SourceCode/Pseudo/Binary/BSTrandinsertPRO.txt",
+      "lineNumbers": false,
+      "startAfter": "/* *** ODSATag: randinsertLeft *** */",
+      "endBefore": "/* *** ODSAendTag: randinsertLeft *** */",
+      "tags": {
+        "sig": 1,
+        "checknull": 2,
+        "visitleft": 3,
+        "visitright": 4,
+        "visit": 5,
+        "end": 6
+      }
+    }],
+    "java_generic": [{
+      "url": "../../../SourceCode/Pseudo/Binary/BSTrandinsertPRO.txt",
+      "lineNumbers": false,
+      "startAfter": "/* *** ODSATag: randinsertRight *** */",
+      "endBefore": "/* *** ODSAendTag: randinsertRight *** */",
+      "tags": {
+        "sig": 1,
+        "checknull": 2,
+        "visitleft": 3,
+        "visitright": 4,
+        "visit": 5,
+        "end": 6
+      }
+    }]
+  }
+}

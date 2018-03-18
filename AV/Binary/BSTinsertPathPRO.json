@@ -1,0 +1,22 @@
+{
+  "translations" :{
+    "en": {
+      ".avTitle": "BST Insert Path Proficiency Exercise",
+      "av_Authors": "Matthew McQuaigue",
+      ".instructLabel": "Instructions:",
+      ".instructions": "Click on the respective nodes to highlight the path of insertion for the given number.",
+      "#about": "About"
+    }
+  },
+  "params": {
+    "JXOP-feedback": "atend"
+  },
+  "code": {
+    "processing": {
+      "url": "../../SourceCode/Processing/Binary/BST.pde",
+      "startAfter": "/* *** ODSATag: inserthelp *** */",
+      "endBefore": "/* *** ODSAendTag: inserthelp *** */",
+      "tags": {}
+    }
+  }
+}

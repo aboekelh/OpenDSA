@@ -1,0 +1,14 @@
+{
+  "translations": {
+    "en": {
+      ".avTitle": "BST Find Value",
+      "av_Authors": "Matthew McQuaigue",
+      ".instructLabel": "Instructions:",
+      ".instructions": "Click on the respective nodes to highlight the path of insertion for the given number.",
+      "#about": "About"
+    }
+  },
+  "params": {
+    "JXOP-feedback": "atend"
+  }
+}

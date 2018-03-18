@@ -1,0 +1,53 @@
+{
+  "title": "Example of Simple Book",
+  "desc": "Simple Book Example",
+  "build_dir": "Books",
+  "code_dir": "SourceCode/",
+  "lang": "en",
+  "build_JSAV": false,
+  "suppress_todo": false,
+  "dispModComp": true,
+  "glob_exer_options": {
+    "JXOP-debug": "true"
+  },
+  "chapters": {
+    "Preface": {
+      "Intro": {
+        "long_name": "How to Use this System",
+        "sections": {}
+      }
+    },
+    "A Simple Example": {
+      "My_simple/bst_simple": {
+        "long_name": "Binary Search Trees",
+        "sections": {
+          "Binary Search Trees": {},
+          "Insertion of Binary Search Tree": {
+            "BSTinsertCON": {
+              "long_name": "Insert BST Slideshow",
+              "required": false,
+              "points": 0.0,
+              "threshold": 10.0
+            }
+          },
+          "Insertion into Binary Search Tree Practice": {
+            "BSTinsertPathPRO": {
+              "long_name": "Insert BST path Practice",
+              "required": false,
+              "points": 0.0,
+              "threshold": 10.0
+            }
+          },
+	  "Random Insertion of Binary Search Tree": {
+            "BSTrandinsertPRO": {
+              "long_name": "Random Insert BST Practice",
+              "required": false,
+              "points": 0.0,
+              "threshold": 10.0
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "translations": {
+    "en": {
+      ".avTitle": "Sorted Array Delete",
+      "av_Authors": "Anna Boekelheide",
+      ".instructLabel": "Instructions:",
+      ".instructions": "...",
+      "#about": "About"
+    }
+  },
+  "params": {
+    "JXOP-feedback": "atend",
+    "JXOP-fixmode": "undo"
+  }
+}

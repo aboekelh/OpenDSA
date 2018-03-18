@@ -1,0 +1,15 @@
+{
+  "translations": {
+    "en": {
+      ".avTitle": "Sorted Array Insert",
+      "av_Authors": "Anna Boekelheide",
+      ".instructLabel": "Instructions:",
+      ".instructions": "...",
+      "#about": "About"
+    }
+  },
+  "params": {
+    "JXOP-feedback": "atend",
+    "JXOP-fixmode": "undo"
+  }
+}

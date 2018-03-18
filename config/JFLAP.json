@@ -1,0 +1,127 @@
+{
+  "title": "JFLAP",
+  "desc": "JFLAP",
+  "build_dir": "Books",
+  "code_dir": "SourceCode/",
+  "code_lang": {
+    "Java": {
+      "ext": [
+        "java"
+      ],
+      "label": "Java",
+      "lang": "java"
+    },
+    "Processing": {
+      "ext": [
+        "pde"
+      ],
+      "label": "Processing",
+      "lang": "java"
+    },
+    "Java_Generic": {
+      "ext": [
+        "java"
+      ],
+      "label": "Java (Generic)",
+      "lang": "java"
+    },
+    "C++": {
+      "ext": [
+        "cpp",
+        "h"
+      ],
+      "label": "C++",
+      "lang": "C++"
+    }
+  },
+  "lang": "en",
+  "build_JSAV": false,
+  "build_cmap": false,
+  "suppress_todo": true,
+  "assumes": "recursion",
+  "dispModComp": true,
+  "glob_exer_options": {},
+  "chapters": {
+    "Introduction": {
+      "JFLAP/Introduction": {
+        "long_name": "Introduction",
+        "sections": {}
+      }
+    },
+    "Finite Automata": {
+      "JFLAP/FAEditor": {
+        "long_name": "Finite Automaton Editor",
+        "sections": {}
+      },
+      "JFLAP/NPDAEditor": {
+        "long_name": "Non-deterministic Pushdown Automaton Editor",
+        "sections": {}
+      },
+      "JFLAP/TMEditor": {
+        "long_name": "Turing Machine Editor",
+        "sections": {}
+      }
+
+    },
+    "Grammar": {
+      "JFLAP/GrammarEditor": {
+        "long_name": "Grammar Editor",
+        "sections": {}
+      }
+    },
+    "Regular Expression": {
+      "JFLAP/REtoFA": {
+        "long_name": "Regular Expression to Finite Automaton Converter",
+        "sections": {}
+      }
+    },
+    "Sections": {
+      "JFLAP/FATester": {
+        "long_name": "Create FA Exercise",
+        "sections": {}
+      },
+      "JFLAP/FAFixer": {
+        "long_name": "Fix FA Exercise",
+        "sections": {}
+      },
+      "JFLAP/ExerciseGenerator": {
+        "long_name": "Finite Automaton Exercise Generator",
+        "sections": {}
+      }
+    },
+    "Martin Tamayo": {
+      "JFLAP/MartinTamayo": {
+        "long_name": "Martin's AVs",
+        "sections": {
+          "Finite Accepter": {
+            "FAEditor": {
+              "long_name": "Finite Automata Editor",
+              "required": false,
+              "points": 0,
+              "showhide": "none",
+              "threshold": 1.0
+            }
+          },
+          "Mealy Machine": {
+            "MealyEditor": {
+              "long_name": "Mealy Machine Editor",
+              "required": false,
+              "points": 0,
+              "showhide": "none",
+              "threshold": 1.0
+            }
+          },
+          "Moore Machine": {
+            "MooreEditor": {
+              "long_name": "Moore Machine Editor",
+              "required": false,
+              "points": 0,
+              "showhide": "none",
+              "threshold": 1.0
+            }
+          }
+        }
+      }
+    }
+  }
+}

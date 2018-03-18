@@ -1,0 +1,8 @@
+#Temp files
+*~
+
+#Generated files
+*.class
+Backend/nohup.out
+nohup.out
+*.pyc

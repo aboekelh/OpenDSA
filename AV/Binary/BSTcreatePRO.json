@@ -1,0 +1,47 @@
+{
+  "translations": {
+    "en": {
+      ".avTitle": "BST Tree Building",
+      "av_Authors": "Matthew McQuaigue",
+      ".instructLabel": "Instructions:",
+      ".instructions": "Build a BST by following the algorithm and using the 'Add Root Node', 'Add Left Child', and 'Add Right Child' buttons. To add a root node, click the empty node and click 'Add Root Node'. To add a child to a parent node, click to highlight the parent and then click the 'Add Left Child' or 'Add Right Child' buttons.",
+      "#about": "About",
+      "#addnode": "Add Root Node",
+      "#addleft": "Add Left Child",
+      "#addright": "Add Right Child"
+    }
+  },
+  "params": {
+    "JXOP-feedback": "atend"
+  },
+  "code": {
+    "BSTAlgorithm": [{
+      "url": "../../../SourceCode/Pseudo/Binary/BSTcreatePRO.txt",
+      "lineNumbers": false,
+      "startAfter": "/* *** ODSATag: bstcreate *** */",
+      "endBefore": "/* *** ODSAendTag: bstcreate *** */",
+      "tags": {
+        "sig": 1,
+        "checknull": 2,
+        "visitleft": 3,
+        "visitright": 4,
+        "visit": 5,
+        "end": 6
+      }
+    }],
+    "Flip": [{
+      "url": "../../../SourceCode/Pseudo/Binary/BSTcreatePRO.txt",
+      "lineNumbers": false,
+      "startAfter": "/* *** ODSATag: bstcreateFlip *** */",
+      "endBefore": "/* *** ODSAendTag: bstcreateFlip *** */",
+      "tags": {
+        "sig": 1,
+        "checknull": 2,
+        "visitleft": 3,
+        "visitright": 4,
+        "visit": 5,
+        "end": 6
+      }
+    }]
+  }
+}

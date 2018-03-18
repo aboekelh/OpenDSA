@@ -1,0 +1,19 @@
+{
+  "translations": {
+    "en": {
+    }
+  },
+  "code": {
+    "java": [{
+      "url": "../../../SourceCode/Java/BTRecurTutor/RecIneffRng.java",
+      "lineNumbers": false,
+      "tags": {
+      }
+    }, {
+      "url": "../../../SourceCode/Java/BTRecurTutor/RecEffRng.java",
+      "lineNumbers": false,
+      "tags": {
+      }
+    }]
+  }
+}
