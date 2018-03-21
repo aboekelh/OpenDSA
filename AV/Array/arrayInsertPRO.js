@@ -1,6 +1,6 @@
 "use strict";
 
-$(document).ready(function() 
+$(document).ready(function()
 {
 
   // Process about button: Pop up a message with an Alert
@@ -17,15 +17,13 @@ $(document).ready(function()
 	{
       stack.clear(); // clear numbers in the stack
     }
-    if (userArr) 
+    if (userArr)
 	{
       userArr.clear(); // clear the array
     }
 
-	  // re-enable the next and insert buttons
-    //document.getElementById("Next").disabled = false;
-	//document.getElementById("Insert").disabled = false;
-
+    document.getElementById("Next").disabled = false;
+    document.getElementById("Insert").disabled = false;
     // generate the array with a value missing
     initialArray = JSAV.utils.rand.numKeys(0, 89, arraySize - 1, {sorted: true});
     // add the blank value
@@ -46,9 +44,9 @@ $(document).ready(function()
       indexed: true,
       layout: arrayLayout.val()
     });
-    
+
 	  // hide the elements of the array
-	  userArr.addClass([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], "hiddenEl")
+	  //userArr.addClass([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], "hiddenEl")
     return userArr;
   }
 
@@ -66,7 +64,6 @@ $(document).ready(function()
       indexed: true,
       layout: arrayLayout.val()
     });
-	  modelArr.addClass([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], "hiddenEl")
 
     // initialize the display
     av.displayInit();
@@ -74,7 +71,6 @@ $(document).ready(function()
     // highlight the first value
     modelArr.highlight(0);
     var hlPos = getHighlight(modelArr);
-    modelArr.removeClass(hlPos, "hiddenEl");
     av.step();
 
     // search for the position to insert the value
@@ -82,15 +78,16 @@ $(document).ready(function()
     while (modelArr.value(current_pos) <= modelStack.first().value())
     {
       modelArr.highlight(current_pos);
-      modelArr.removeClass(current_pos - 1, "hiddenEl")
+      //modelArr.removeClass(current_pos - 1, "hiddenEl")
       modelArr.unhighlight(current_pos - 1)
       current_pos++;
       av.step();
     }
     // mark the position for insertion
     var hlPos = getHighlight(modelArr)
+
     modelArr.addClass(hlPos + 1, "insertIndex");
-    modelArr.removeClass(hlPos, "hiddenEl")
+    //modelArr.removeClass(hlPos, "hiddenEl")
     modelArr.unhighlight(hlPos);
     av.gradeableStep();
 
@@ -106,7 +103,7 @@ $(document).ready(function()
       if (modelArr.value(hlPos) == "")
       {
         modelArr.highlight(hlPos - 1)
-        modelArr.removeClass(hlPos, "hiddenEl")
+        //modelArr.removeClass(hlPos, "hiddenEl")
         modelArr.unhighlight(hlPos)
         hlPos = getHighlight(modelArr)
       } else
@@ -157,6 +154,8 @@ $(document).ready(function()
     }
   }
 
+
+
   function emptyHighlight()
   {
     for (var i = 0; i < userArr.size(); i++)
@@ -199,7 +198,7 @@ $(document).ready(function()
 	   var hlPos = getHighlight(userArr);
 
      // if we've found the position in which to insert the value
-	   if (countIndWithClass(userArr, "insertIndex") > 0)
+	   if (countIndWithClass(userArr, "insertIndex") > 0 || countIndWithClass(userArr, "wrongIndex") > 0)
 	   {
        // there is a highlighted value in the array
 		   if (hlPos > -1)
@@ -208,17 +207,9 @@ $(document).ready(function()
 			   if (userArr.value(hlPos) == "")
 			   {
 				    userArr.highlight(hlPos - 1)
-					  userArr.removeClass(hlPos, "hiddenEl")
 					  userArr.unhighlight(hlPos)
 				    // update the hlPos value
 				    hlPos = getHighlight(userArr)
-
-				    // if the highlighted position matches the insert position
-				    //if (hlPos = getIndicesWithClass(userArr, "insertIndex")[0])
-				   // {
-					        // document.getElementById("Insert").disabled = false;
-				   // }
-        // a highlighted number
 			  } else
         {
           // if the position just before hlPos contains a number
@@ -241,7 +232,7 @@ $(document).ready(function()
 	else if (hlPos > -1)
   {
 		userArr.highlight(hlPos + 1)
-		userArr.removeClass(hlPos, "hiddenEl")
+		//userArr.removeClass(hlPos, "hiddenEl")
 		userArr.unhighlight(hlPos)
 	}
 
@@ -249,30 +240,62 @@ $(document).ready(function()
   else
   {
 		 userArr.highlight(0);
-	   userArr.removeClass(hlPos, "hiddenEl")
+	   //userArr.removeClass(hlPos, "hiddenEl")
   }
 
 	 hlPos = getHighlight(userArr);
   }
 
-  function insertButton() 
+  function insertButton()
   {
-
-	// if we have found the location to insert the value
-	if (countIndWithClass(userArr, "insertIndex") > 0)
-	{
-		//document.getElementById("Next").disabled = true;
-		var ind = getIndicesWithClass(userArr, "insertIndex")[0];
-		userArr.value(ind, stack.first().value());
-		stack.removeFirst();
-		userArr.unhighlight(ind);
-	}
-	else 
-	{
+    var insert_val = stack.first().value();
 		var hlPos = getHighlight(userArr);
-		userArr.addClass(hlPos, "insertIndex");
-		userArr.unhighlight(hlPos);
-	}
+    if (userArr.value(hlPos) >= insert_val && (hlPos == 0 || userArr.value(hlPos - 1) < insert_val))
+    {
+      userArr.addClass(hlPos, "insertIndex");
+      document.getElementById("Next").disabled = true;
+      document.getElementById("Insert").disabled = true;
+      //animate moving the values over
+      var intv = setInterval(function animateStep()
+        {
+          var hlPos = getHighlight(userArr);
+          var insert_pos = getIndicesWithClass(userArr, "insertIndex")[0];
+          if (hlPos > -1)
+          {
+            if (userArr.value(hlPos) == "")
+            {
+              userArr.highlight(hlPos - 1);
+              userArr.unhighlight(hlPos);
+            } else {
+              if (userArr.value(hlPos - 1) != "" && hlPos < userArr.size() - 1)
+              {
+                userArr.value(hlPos + 1, userArr.value(hlPos));
+                userArr.value(hlPos, "");
+              } else
+              {
+                userArr.highlight(hlPos - 1);
+                userArr.unhighlight(hlPos);
+                hlPos = getHighlight(userArr);
+              }
+            }
+          } else
+          {
+            userArr.highlight(userArr.size() - 1);
+            hlPos = getHighlight(userArr);
+          }
+          if (hlPos <= insert_pos)
+          {
+            userArr.value(insert_pos, stack.first().value());
+            stack.removeFirst();
+            userArr.unhighlight(insert_pos);
+            clearInterval(intv);
+          }
+        }, 600);
+        userArr.unhighlight(hlPos);
+    } else {
+      userArr.addClass(hlPos, "wrongIndex");
+      userArr.unhighlight(hlPos);
+    }
 	//document.getElementById("Insert").disabled = true;
 	//exercise.gradeableStep();
   }
